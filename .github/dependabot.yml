@@ -1,9 +1,32 @@
 version: 2
 updates:
+  # Analyse quotidienne des dépendances Python
   - package-ecosystem: "pip"
     directory: "/"
     schedule:
-      interval: "weekly"   # Vérification chaque semaine
-      time: "14:15"
+      interval: "daily"
+      time: "14:57"
       timezone: "Europe/Paris"
-     open-pull-requests-limit: 5
+    open-pull-requests-limit: 10
+    labels:
+      - "dependencies"
+      - "security"
+      - "devsecops"
+    reviewers:
+      - "youssouf95"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+  # Analyse quotidienne des GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "14:57"
+      timezone: "Europe/Paris"
+    open-pull-requests-limit: 5
+    labels:
+      - "github-actions"
+      - "security"
+
+
