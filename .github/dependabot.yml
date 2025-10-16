@@ -1,4 +1,4 @@
-kkversion: 2
+version: 2
 updates:
   # Analyse quotidienne des dépendances Python
   - package-ecosystem: "pip"
