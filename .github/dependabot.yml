@@ -1,19 +1,32 @@
-version: 2
+kkversion: 2
 updates:
-  # Configuration pour les dépendances Python (pip)
+  # Analyse quotidienne des dépendances Python
   - package-ecosystem: "pip"
     directory: "/"
     schedule:
-      interval: "weekly"  # Vérification hebdomadaire
-      day: "monday"
-      time: "09:00"
+      interval: "daily"
+      time: "14:15"
+      timezone: "Europe/Paris"
     open-pull-requests-limit: 10
     labels:
       - "dependencies"
       - "security"
-  # Configuration pour GitHub Actions workflows
+      - "devsecops"
+    reviewers:
+      - "youssouf95"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+  # Analyse quotidienne des GitHub Actions
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "daily"
+      time: "10:00"
+      timezone: "Europe/Paris"
     open-pull-requests-limit: 5
+    labels:
+      - "github-actions"
+      - "security"
+
+
