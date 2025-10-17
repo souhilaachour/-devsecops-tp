@@ -7,7 +7,7 @@ urllib3==2.5.0
 PyYAML==6.0
 ruamel.yaml==0.17.34
 xmltodict==0.13.0
-PyJWT==2.8.0
+PyJWT==2.10.1
 cryptography==41.0.7
 SQLAlchemy==2.0.44
 pymongo==4.7.1
